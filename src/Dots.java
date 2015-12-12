@@ -1,5 +1,6 @@
 /**
- * Created by Robert on 11/4/15.
+ * Dots
+ * Correspond to a Pixel
  */
 public class Dots {
     private int x;

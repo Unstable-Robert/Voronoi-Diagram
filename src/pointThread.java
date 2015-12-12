@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Robert on 11/5/15.
+ * PointThread
+ * Assigns each dot within the assigned region to a Point
+ * Dots are assigned to the closest Point
  */
 public class pointThread implements Runnable {
     private int startX;
@@ -26,6 +28,14 @@ public class pointThread implements Runnable {
 
     @Override
     public void run() {
+        sortPoints();
+        jPanel.repaint();
+    }
+
+    /**
+     * Sorts Dots by finding the closest to point to it
+     */
+    private void sortPoints(){
         ArrayList<Double> distances = new ArrayList<>();
         for (int x = startX; x < endX; x ++) {
             for (int y = startY; y < endY; y ++) {
@@ -38,11 +48,9 @@ public class pointThread implements Runnable {
                 list.get(index).addDot(dot);
             }
         }
-//        jPanel.repaint(startX, startY, (endX - startX), (endY - startY)); //does nothing not set up
         long endTime = System.nanoTime();
         long dur = (endTime - startTime) / 1000000;
         System.out.println( name() + "ThreadEnd:  " + dur);
-        jPanel.repaint();
     }
 
     private double getDistance(int x1, int y1, int x2, int y2) {

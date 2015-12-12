@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Main extends JFrame {
     private int width = 800;
-    private int height = 822;
+    private int height = 822; //22 accounts for the top bar
     public static void main(String[] args) {
         EventQueue.invokeLater(
                 () -> new Main()
