@@ -37,9 +37,10 @@ public class pointThread implements Runnable {
      */
     private void sortPoints(){
         ArrayList<Double> distances = new ArrayList<>();
+        System.out.println("Starting the thing");
         for (int x = startX; x < endX; x ++) {
-            for (int y = startY; y < endY; y ++) {
-                Dots dot = new Dots(x , y );
+            for (int y = startY; y < endY; y++) {
+                Dots dot = new Dots(x, y);
                 for (int z = 0; z < list.size(); z++) {
                     distances.add(getDistance(dot.getX(), dot.getY(), list.get(z).getX(), list.get(z).getY()));
                 }

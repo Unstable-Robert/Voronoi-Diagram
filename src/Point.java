@@ -50,10 +50,16 @@ public class Point{
         return new Ellipse2D.Double(this.x, this.y, 5, 5);
     }
     public synchronized void addDot(Dots d) {
-        dots.add(d);
+            dots.add(d);
+    }
+
+    public void addDots(Point p) {
+        System.out.println("Point: " + p.getDots().size());
+        dots.addAll(p.getDots());
     }
 
     public ArrayList<Dots> getDots() {
+//        System.out.println(dots);
         return dots;
     }
     public void resetPoints() {

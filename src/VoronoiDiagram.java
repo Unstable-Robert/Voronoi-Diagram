@@ -57,6 +57,7 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
     private void sortDotsMultiThreaded() {
 //        ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
 //        long startTime = System.nanoTime();
+        int count = -1;
         for (int x = 0; x < 4; x ++) {
             for (int y = 0; y < 4; y ++) {
                 pointThread pt = new pointThread(
