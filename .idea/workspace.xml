@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1c32a67-de15-4b0b-b094-b91145fb4137" name="Default" comment="Removed old unused methods">
+    <list default="true" id="a1c32a67-de15-4b0b-b094-b91145fb4137" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Voronoi/Dots.class" afterPath="$PROJECT_DIR$/out/production/Voronoi/Dots.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Voronoi/Point.class" afterPath="$PROJECT_DIR$/out/production/Voronoi/Point.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Voronoi/VoronoiDiagram.class" afterPath="$PROJECT_DIR$/out/production/Voronoi/VoronoiDiagram.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Voronoi/pointThread.class" afterPath="$PROJECT_DIR$/out/production/Voronoi/pointThread.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Point.java" afterPath="$PROJECT_DIR$/src/Point.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VoronoiDiagram.java" afterPath="$PROJECT_DIR$/src/VoronoiDiagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pointThread.java" afterPath="$PROJECT_DIR$/src/pointThread.java" />
     </list>
     <ignored path="Voronoi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -685,7 +682,7 @@
       <workItem from="1478623912058" duration="54000" />
       <workItem from="1479247478835" duration="1319000" />
       <workItem from="1482010186808" duration="2329000" />
-      <workItem from="1482034721620" duration="1907000" />
+      <workItem from="1482034721620" duration="1948000" />
     </task>
     <task id="LOCAL-00001" summary="Removed old unused methods">
       <created>1449887662080</created>
@@ -693,11 +690,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449887662080</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Removed old unused methods&#10;before changing pointThread to callable">
+      <created>1482036655369</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1482036655369</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53445000" />
+    <option name="totallyTimeSpent" value="53486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="35" width="1221" height="902" extended-state="0" />
@@ -741,7 +744,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Removed old unused methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed old unused methods" />
+    <MESSAGE value="Removed old unused methods&#10;before changing pointThread to callable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed old unused methods&#10;before changing pointThread to callable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
