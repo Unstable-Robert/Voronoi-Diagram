@@ -33,6 +33,7 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
      * Goes through one pixel at a time comparing it to each dot(Pixel) currently in the view
      * Once the dot has been compared to each point, the closest dot is determined by the distances calculated
      * The point with the shortest distance has to the dot has it added to its list of dots
+     * Moved to pointThread
      */
     private void findShapes() {
         ArrayList<Double> distances = new ArrayList<>();
@@ -71,6 +72,7 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
                 executorService.execute(pt);
             }
         }
+
 //        executorService.shutdown();
 //        while (!executorService.isTerminated());
 //        long endTime = System.nanoTime();
@@ -119,15 +121,33 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
         return bi;
     }
 
+    private BufferedImage getConvexColoredImage() {
+        long startTime = System.nanoTime();
+        BufferedImage bi = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+        for (int x = 0; x < list.size(); x ++) {
+            for (int z = 0; z < list.get(x).getDots().size(); z++) {
+                int xx = list.get(x).getDots().get(z).getX();
+                int yy = list.get(x).getDots().get(z).getY();
+                bi.setRGB(xx, yy, list.get(x).getColor().getRGB());
+            }
+        }
+        long endTime = System.nanoTime();
+        long dur = (endTime - startTime) / 1000000;
+        System.out.println("GetImage Time:  " + dur);
+        return bi;
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         long startTime = System.nanoTime();
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g.create();
-        g2d.setPaint(Color.black);
-        g2d.drawImage(getColoredImage(), null, 0, 0);
+        g2d.drawImage(getConvexColoredImage(), null, 0, 0);
             for (int x = 0; x < list.size(); x++) {
+                g2d.setPaint(Color.black);
                 g2d.fill(list.get(x).getShape());
+                //g2d.setPaint(list.get(x).getColor());    //prob have way too many points for this to work well
+                //g2d.fill(list.get(x).createHullPath());  //but it should create a convex hull at somepoint
             }
         long endTime = System.nanoTime();
         long dur = (endTime - startTime) / 1000000;

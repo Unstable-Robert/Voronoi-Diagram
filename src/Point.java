@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Path2D;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -66,6 +67,39 @@ public class Point{
 
         this.dots = new ArrayList<>();
     }
+    private int getOrientation(Dots p, Dots q, Dots r) {
+        int val = (q.getY() - p.getY()) * (r.getX() - q.getY()) -
+                (q.getX() - p.getX()) * (r.getY() - q.getY());
+        if (val == 0) return 0;
+        return (val > 0)? 1: 2;
+    }
+
+    public Path2D createHullPath() {
+        Path2D path = new Path2D.Double(Path2D.WIND_EVEN_ODD);
+        if (dots.size() < 3) return null;
+
+        int l = 0;
+        for (int i = 1; i < dots.size()/5; i++) {
+            if (dots.get(i).getX() < dots.get(l).getX())
+            l = i;
+        }
+        path.moveTo(dots.get(l).getX(), dots.get(l).getY());
+        int p = l, q;
+
+        do {
+            q = (p+1)%dots.size();
+            for (int i = 0; i < dots.size()/5; i++) {
+                if (getOrientation(dots.get(p), dots.get(i), dots.get(q)) == 2)
+                    q = i;
+            }
+            p = q;
+            path.lineTo(dots.get(p).getX(), dots.get(p).getY());
+            System.out.print("currently in loop");
+        } while(p != l);
+        path.closePath();
+        return path;
+    }
+
 
     @Override
     public String toString() {
