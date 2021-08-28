@@ -117,7 +117,7 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
             }
         long endTime = System.nanoTime();
         long dur = (endTime - startTime) / 1000000;
-        System.out.println("GetImage Time:  " + dur);
+//        System.out.println("GetImage Time:  " + dur);
         return bi;
     }
 
@@ -133,7 +133,7 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
         }
         long endTime = System.nanoTime();
         long dur = (endTime - startTime) / 1000000;
-        System.out.println("GetImage Time:  " + dur);
+//        System.out.println("GetImage Time:  " + dur);
         return bi;
     }
 
@@ -151,7 +151,7 @@ public class VoronoiDiagram extends JPanel implements MouseListener {
             }
         long endTime = System.nanoTime();
         long dur = (endTime - startTime) / 1000000;
-        System.out.println("PaintComponent Time:  " + dur);
+//        System.out.println("PaintComponent Time:  " + dur);
     }
 
 

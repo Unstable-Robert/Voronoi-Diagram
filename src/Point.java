@@ -55,7 +55,7 @@ public class Point{
     }
 
     public void addDots(Point p) {
-        System.out.println("Point: " + p.getDots().size());
+//        System.out.println("Point: " + p.getDots().size());
         dots.addAll(p.getDots());
     }
 
@@ -94,7 +94,7 @@ public class Point{
             }
             p = q;
             path.lineTo(dots.get(p).getX(), dots.get(p).getY());
-            System.out.print("currently in loop");
+//            System.out.print("currently in loop");
         } while(p != l);
         path.closePath();
         return path;

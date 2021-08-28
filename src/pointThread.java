@@ -37,7 +37,7 @@ public class pointThread implements Runnable {
      */
     private void sortPoints(){
         ArrayList<Double> distances = new ArrayList<>();
-        System.out.println("Starting the thing");
+//        System.out.println("Starting the thing");
         for (int x = startX; x < endX; x ++) {
             for (int y = startY; y < endY; y++) {
                 Dots dot = new Dots(x, y);
@@ -51,7 +51,7 @@ public class pointThread implements Runnable {
         }
         long endTime = System.nanoTime();
         long dur = (endTime - startTime) / 1000000;
-        System.out.println( name() + "ThreadEnd:  " + dur);
+//        System.out.println( name() + "ThreadEnd:  " + dur);
     }
 
     private double getDistance(int x1, int y1, int x2, int y2) {
